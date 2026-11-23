@@ -1,0 +1,9 @@
+{
+  "name": "foodhub/warehouse-logistics",
+  "description": "FoodHub Warehouse & Logistics System",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4"
+  }
+}

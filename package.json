@@ -1,0 +1,19 @@
+{
+  "name": "foodhub-warehouse-logistics",
+  "version": "1.0.0",
+  "description": "FoodHub Warehouse & Logistics Management System",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 8080",
+    "dev": "npx serve . -l 8080",
+    "serve": "npx serve . -l 8080"
+  },
+  "keywords": [
+    "foodhub",
+    "warehouse",
+    "logistics",
+    "wms"
+  ],
+  "author": "FoodHub",
+  "license": "ISC"
+}

@@ -1,0 +1,115 @@
+/* Custom styles for FoodHub */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+#view-auth {
+    isolation: isolate;
+    background: #fff7ec url("auth-background.svg") center / cover no-repeat;
+}
+
+#printable-receipt {
+    font-family: 'Space Mono', monospace;
+}
+
+#system-portal,
+#system-portal > div,
+#system-portal main,
+.content-panel {
+    min-width: 0;
+}
+
+@media (max-width: 767px) {
+    #sidebar-drawer {
+        width: min(16rem, 86vw);
+        max-height: 100dvh;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    #sidebar-nav {
+        max-height: calc(100dvh - 13rem);
+    }
+
+    #system-portal main {
+        padding: 1rem;
+    }
+
+    #system-portal header {
+        min-height: 3.75rem;
+        height: auto;
+        padding: 0.5rem 0.75rem;
+    }
+
+    #system-portal .overflow-x-auto > table {
+        min-width: 42rem;
+    }
+}
+
+@media (max-width: 420px) {
+    #global-search-input-container,
+    #header-notifications {
+        display: none !important;
+    }
+
+    #system-portal main {
+        padding: 0.75rem;
+    }
+
+    #logged-username {
+        display: block;
+        max-width: 5.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 320px) {
+    #system-portal header {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    #sidebar-drawer.fixed {
+        position: static;
+        box-shadow: none;
+    }
+
+    body.overflow-hidden {
+        overflow: auto;
+    }
+}
+
+/* Print styles for Automatic Receipt */
+@media print {
+    body * {
+        visibility: hidden !important;
+    }
+    #receipt-modal, #printable-receipt, #printable-receipt * {
+        visibility: visible !important;
+    }
+    #receipt-modal {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        background: transparent !important;
+        display: block !important;
+    }
+    .no-print {
+        display: none !important;
+    }
+}
+
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

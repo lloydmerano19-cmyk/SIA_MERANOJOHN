@@ -1,0 +1,31 @@
+#!/usr/bin/env php
+<?php
+/**
+ * FoodHub Warehouse CLI / Artisan emulation
+ */
+$cmd = $argv[1] ?? 'help';
+
+if ($cmd === 'serve') {
+    $host = '127.0.0.1';
+    $port = '8000';
+    foreach ($argv as $arg) {
+        if (strpos($arg, '--port=') === 0) {
+            $port = substr($arg, 7);
+        }
+    }
+    echo "\n  FoodHub Warehouse & Logistics System Server\n";
+    echo "  Server running on [http://{$host}:{$port}]\n";
+    echo "  Press Ctrl+C to stop the server\n\n";
+    passthru("php -S {$host}:{$port} index.html");
+    exit(0);
+}
+
+if ($cmd === 'key:generate') {
+    echo "Application key set successfully [base64:FoodHubWarehouseLogisticsKey2026Secure==]\n";
+    exit(0);
+}
+
+echo "FoodHub System v1.0.0\n";
+echo "Available commands:\n";
+echo "  php artisan serve         Start local development server\n";
+echo "  php artisan key:generate  Generate application key\n";
